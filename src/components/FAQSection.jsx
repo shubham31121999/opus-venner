@@ -207,7 +207,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => (
   <div className="border-b border-gray-200">
     <button
       onClick={onToggle}
-      className="w-full flex justify-between items-center py-4 text-left text-lg font-medium text-gray-800 hover:text-themeLight transition-colors duration-200"
+      className="w-full flex justify-between items-center py-4 text-left text-lg font-medium text-white hover:text-themeLight transition-colors duration-200"
     >
       {question}
       <ChevronDown
@@ -221,7 +221,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => (
         isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
       }`}
     >
-      <p className="text-gray-600 text-sm pb-4 pr-4">{answer}</p>
+      <p className="text-white text-sm pb-4 pr-4">{answer}</p>
     </div>
   </div>
 );
@@ -232,12 +232,12 @@ const FAQSection = () => {
   const toggleFAQ = (index) => setOpenIndex(index === openIndex ? null : index);
 
   return (
-    <section className="bg-white px-6 mt-4 mb-6">
+    <section className="bg-[#333333]  py-16 px-6 mt-4 mb-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold text-themeLight text-center mb-6">
           Frequently Asked Questions
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-4 text-white">
           {faqs.map((faq, index) => (
             <FAQItem
               key={index}

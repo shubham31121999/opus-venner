@@ -41,12 +41,12 @@ const TrustBuilders = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-16 px-4 sm:px-6 md:px-12 bg-white"
+      className="w-full py-16 px-4 sm:px-6 md:px-12 bg-themeLight"
     >
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Row 1 */}
         <div
-          className={`flex flex-col items-center justify-center md:items-center bg-white rounded-xl shadow p-6 ${anim(
+          className={`flex flex-col items-center justify-center md:items-center rounded-xl shadow p-6 ${anim(
             ""
           )}`}
           style={{
