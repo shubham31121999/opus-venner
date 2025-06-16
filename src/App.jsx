@@ -47,7 +47,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/thank-you" element={<ThankYouPage />} />
+      <Route path="/thankyou" element={<ThankYouPage />} />
     </Routes>
   );
 }
