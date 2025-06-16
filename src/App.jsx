@@ -13,22 +13,31 @@ import TrustBuilders from "./components/TrustBuilders";
 import FinalCTA from "./components/FinalCTA";
 import ThankYouPage from "./components/ThankYouPage";
 import BeforeAfter from "./components/BeforeAfter";
+import FloatingButtons from "./components/FloatingButtons";
+import FormSection from "./components/FormSection";
 
+import TestimonialCarousel from "./components/TestimonialCarousal";
+import Gallery from "./components/Gallery";
 function HomePage() {
   return (
     <>
+     <FloatingButtons />
       <Navbar />
+      <Banner />
       <Hero />
       <KeyValue />
+      <BeforeAfter />
       <TrustBuilders />
       <VeneerJourney />
-      <BeforeAfter />
+      <FormSection />
       {/* <Services /> */}
       {/* <WhyChoose /> */}
       {/* <Testimonials /> */}
       <FAQSection />
+      < Gallery />
+      <TestimonialCarousel />
       {/* <FinalCTA /> */}
-      <CTASection />
+      < CTASection />
       <Footer />
     </>
   );

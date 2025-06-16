@@ -72,19 +72,19 @@ const Testimonials = () => {
     <section className="bg-white pt-7 px-4 text-center">
       <div className="max-w-7xl mx-auto">
         {/* Emotional Hook */}
-        <h2 className="text-3xl sm:text-4xl font-bold text-themeGreen mb-4">
+        {/* <h2 className="text-3xl sm:text-4xl font-bold text-themeGreen mb-4">
           Real Stories, Real Smiles
         </h2>
         <p className="text-gray-600 mb-10 text-base md:text-lg">
           Rated <span className="font-semibold text-yellow-500">4.9/5 ★</span> on Google Reviews – from 500+ smiles transformed.
-        </p>
+        </p> */}
 
         {/* Testimonials Grid - Desktop */}
-        <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
             <TestimonialCard testimonial={t} key={i} />
           ))}
-        </div>
+        </div> */}
 
         {/* Carousel - Mobile */}
         <div className="sm:hidden">
@@ -111,7 +111,7 @@ const Testimonials = () => {
             Before & After <br/> 
             <h5 className=" text-xl">Rohit’s <span className="text-themeLight">Smile Restored</span> with Implants</h5>
           </h3>
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-row gap-4 justify-center">
   <img
     src={Before1}
     alt="Before implants"

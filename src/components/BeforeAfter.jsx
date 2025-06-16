@@ -49,9 +49,9 @@ const BeforeAfter = () => {
     setCurrent((prev) => (prev === cases.length - 1 ? 0 : prev + 1));
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-darkGray">
       <div className="max-w-5xl mx-auto flex flex-col items-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-2 text-center">
+        <h2 className="text-4xl font-bold text-white mb-2 text-center">
           Smile Transformations
         </h2>
         <p className="text-themeLight text-lg mb-10 text-center">
@@ -66,12 +66,7 @@ const BeforeAfter = () => {
               className="w-full max-w-2xl rounded-xl border-4 border-white shadow-lg"
             />
             {/* Overlay labels */}
-            <span className="absolute top-4 left-4 bg-white/90 text-black font-bold px-4 py-1 rounded shadow">
-              BEFORE
-            </span>
-            <span className="absolute bottom-4 right-4 bg-white/90 text-black font-bold px-4 py-1 rounded shadow">
-              AFTER
-            </span>
+            
             {/* Navigation arrows */}
             <button
               onClick={handlePrev}
@@ -94,7 +89,7 @@ const BeforeAfter = () => {
                 <Avatar name={cases[current].name} />
               </div>
               <div className="w-5/6 flex-1 pl-3">
-                <p className="text-lg text-gray-700 italic text-left max-w-xl">
+                <p className="text-lg text-darkGray italic text-left max-w-xl">
                   {cases[current].caption}
                 </p>
               </div>
@@ -136,7 +131,7 @@ const BeforeAfter = () => {
                     <Avatar name={c.name} />
                   </div>
                   <div className="w-5/6 flex-1 pl-3">
-                    <p className="text-lg text-gray-700 italic text-left max-w-xl">
+                    <p className="text-lg text-darkGray italic text-left max-w-xl">
                       {c.caption}
                     </p>
                   </div>
@@ -147,14 +142,14 @@ const BeforeAfter = () => {
           ))}
         </div>
         {/* Aggregate Stats */}
-        <div className="text-xl font-semibold text-gray-800 mt-8 mb-2 text-center">
+        <div className="text-xl font-semibold text-themeLight mt-8 mb-2 text-center">
           Over 500 veneers done with a 99% patient satisfaction rate
         </div>
-        <div className="text-gray-500 mb-8 text-center">
+        <div className="text-themeLight mb-8 text-center">
           Hundreds of smiles transformed since 1995.
         </div>
         {/* CTA */}
-        <div>
+        <div className="text-white text-center">
           Imagine what we can do for your smile!
           <span className=" ml-4">
             <a

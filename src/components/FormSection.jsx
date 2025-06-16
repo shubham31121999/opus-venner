@@ -1,13 +1,15 @@
+
 import React from "react";
-import { ShieldCheck, Star } from "lucide-react";
+import { ShieldCheck, Star } from "lucide-react"; // Swap icons if needed
 import { useNavigate } from "react-router-dom";
-import smiling from "../assets/smiling.webp"; // Make sure this path is correct
 import  { useState } from "react";
-const Hero = () => {
-  const navigate = useNavigate();
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+
+const FormSection = () => {
+
+      const navigate = useNavigate();
+      const [fullName, setFullName] = useState("");
+      const [email, setEmail] = useState("");
+      const [phone, setPhone] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission behavior
@@ -33,45 +35,31 @@ const Hero = () => {
       );
 
       console.log(response, "response");
-       navigate("/thankyou");
+      navigate("/thankyou");
     } catch (error) {
       console.error("Error during API call:", error);
     }
   };
 
   return (
-    <section className="w-full bg-[url('/images/hero.png')] bg-cover bg-center text-white relative">
+    <section className="w-full bg-white bg-cover bg-center text-white">
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
-      <div className="relative z-10 p-6 md:p-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
-        {/* Left Content */}
-        <div className="w-full md:w-1/2 flex flex-col items-center md:items-center text-center md:text-left">
-          {/* Hero Image */}
-          <img
-            src={smiling}
-            alt="Smiling patient with veneers"
-            className="w-60 h-60 object-cover rounded-full mb-4 shadow-lg border-4 border-white md:mb-6"
-          />
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-            Transform Your Smile with Porcelain Veneers in Bandra & Fort
-          </h1>
-          <p className="text-lg text-gray-200 mb-6">
-            Led by 30+ years of expertise, Opus Dental delivers natural-looking
-            veneers with personalized care in Mumbai.
-          </p>
-          <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 mb-6">
-            <div className="flex items-center gap-2 text-themeLight font-medium">
-              <Star className="w-5 h-5" />
-              Rated 4.9★ by 1000+ patients
-            </div>
-            <div className="flex items-center gap-2 text-themeLight font-medium">
-              <ShieldCheck className="w-5 h-5" />
-              Certified Implant Center
-            </div>
+      <div className=" p-6 md:p-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row text-darkGray items-center justify-between gap-10">
+          {/* Left Content */}
+          <div className="w-full md:w-1/2 text-center md:text-left">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+              Reclaim Your Smile with <span className="text-themeGreen">Trusted Dental Implants</span>  in Bandra & Fort
+            </h1>
+            
+            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 mb-6">
+  
+</div>
+
           </div>
-        </div>
-        {/* Right Content - Form */}
-         <div className="w-full md:w-1/2" >
+
+          {/* Right Content - Form */}
+          <div className="w-full md:w-1/2">
                        <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-green w-full">
             <div>
               <label className="block text-sm text-darkGray font-medium"> Full Name</label>
@@ -119,9 +107,10 @@ const Hero = () => {
   
 
           </div>
+        </div>
       </div>
     </section>
   );
-};
+}
 
-export default Hero;
+export default FormSection;
