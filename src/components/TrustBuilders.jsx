@@ -1,133 +1,80 @@
-import React, { useRef, useEffect, useState } from "react";
-import doctorPhoto from "../assets/DrBurzinKhan.webp";
-import logo1 from "../assets/logo1.png";
-import logo2 from "../assets/logo2.jpg";
-import logo3 from "../assets/logo3.jpg";
+import React from "react";
+import DrBurzinKhan from "../assets/DrBurzinKhan.webp";
 
-const credentials = [
-  "Over 30 years of experience transforming smiles",
-  "Former Professor at XYZ Dental College",
-  "Fellow, International Academy of Cosmetic Dentistry",
-  "Pioneer of digital smile design in India",
-];
-
-const logos = [
-  { src: logo1, alt: "IDA" },
-  { src: logo2, alt: "ISO Certified" },
-  { src: logo3, alt: "Award" },
-];
-
-const TrustBuilders = () => {
-  const sectionRef = useRef(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new window.IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setInView(true);
-      },
-      { threshold: 0.2 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  // Helper for animation classes
-  const anim = (delay) =>
-    `opacity-0 ${inView ? "animate-fadeInUp" : ""}` +
-    (inView ? "" : "") +
-    (inView ? "" : "");
+const DoctorProfile = () => {
+  const scrollToAppointment = () => {
+    const formEl = document.getElementById("appointment-form");
+    if (formEl) {
+      formEl.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <section
-      ref={sectionRef}
-      className="w-full py-16 px-4 sm:px-6 md:px-12 bg-themeLight"
-    >
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Row 1 */}
-        <div
-          className={`flex flex-col items-center justify-center md:items-center rounded-xl shadow p-6 ${anim(
-            ""
-          )}`}
-          style={{
-            animationDelay: inView ? "0.1s" : undefined,
-            animationFillMode: "forwards",
-          }}
-        >
+    <section className="bg-darkGray text-white px-6 py-0 sm:py-0">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-0 lg:gap-20">
+        
+        {/* Text Content */}
+        <div className="flex-1 text-center my-5 lg:text-left space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold leading-snug">
+            Meet Your <span className="text-themeLight">Cosmetic</span> Dentist
+          </h2>
+
+          <div className="text-left">
+            <h3 className="text-2xl font-semibold ">Dr. Burzin Khan, MDS</h3>
+            <p className="text-themeLight font-semibold">
+              Cosmetic Dentistry Expert
+            </p>
+          </div>
+
+          <ul className="space-y-3 text-left text-gray-200 max-w-md mx-auto lg:mx-0 list-none">
+  {[
+    "Over 30 years of experience transforming smiles",
+    "Pioneer of digital smile design in India",
+    "Member of Indian Dental Association",
+    "Passionate about giving patients confidence in their smiles",
+  ].map((item, index) => (
+    <li key={index} className="relative pl-6 text-base leading-relaxed">
+      <span className="absolute left-0 top-1 text-themeLight">•</span>
+      <span className="inline-block">{item}</span>
+    </li>
+  ))}
+</ul>
+
+
+          <button
+            onClick={scrollToAppointment}
+            className="bg-themeLight text-black border-2 border-white font-bold py-3 px-6 rounded mt-4 hover:bg-white hover:text-black transition"
+          >
+            BOOK AN APPOINTMENT
+          </button>
+        </div>
+
+        {/* Doctor Image with background and quote */}
+        <div className="flex-1 relative flex justify-center items-center w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-none mx-auto">
+          {/* Background box centered behind image */}
+          <div className="absolute z-0 w-[60%] h-[60%] bg-themeLight rounded-xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+
+          {/* Doctor Image */}
           <img
-            src={doctorPhoto}
-            alt="Dr. Burzin Khan, Cosmetic Dentist"
-            className="w-72 h-72 object-cover bg-themeLight rounded-full shadow-xl border-4 border-white"
-            loading="lazy"
+            src={DrBurzinKhan}
+            alt="Dr. Burzin Khan smiling confidently"
+            className="relative z-10 w-4/5 sm:w-3/4 md:w-2/3 object-contain"
           />
-        </div>
-        <div
-          className={`flex flex-col items-center md:items-start justify-center bg-white rounded-xl shadow p-6 ${anim(
-            ""
-          )}`}
-          style={{
-            animationDelay: inView ? "0.3s" : undefined,
-            animationFillMode: "forwards",
-          }}
-        >
-          <div className="text-3xl font-semibold text-themeLight mb-1">
-            Dr. Burzin Khan, MDS
-          </div>
-          <div className="text-gray-700 font-medium mb-3">
-            Cosmetic Dentistry Expert
-          </div>
-          <div className="italic text-gray-500 mb-3">
-            Passionate about giving patients confidence in their smiles.
-          </div>
-          <blockquote className="border-l-4 border-themeLight pl-4 text-black text-lg font-medium max-w-xl mt-3 mb-0">
-            “I believe every patient deserves a smile they love. My goal is to
-            provide veneers that look natural and help you smile confidently, in
-            a stress-free experience.”
-          </blockquote>
-        </div>
-        {/* Row 2 */}
-        <div
-          className={`flex flex-col items-center md:items-start justify-center bg-white rounded-xl shadow p-6 ${anim(
-            ""
-          )}`}
-          style={{
-            animationDelay: inView ? "0.5s" : undefined,
-            animationFillMode: "forwards",
-          }}
-        >
-          <ul className="list-disc list-inside text-black space-y-2 w-full pl-2">
-            {credentials.map((item) => (
-              <li key={item} className="text-lg font-medium">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div
-          className={`flex flex-row flex-wrap justify-center items-center gap-6 bg-white rounded-xl shadow p-6 ${anim(
-            ""
-          )}`}
-          style={{
-            animationDelay: inView ? "0.7s" : undefined,
-            animationFillMode: "forwards",
-          }}
-        >
-          {logos.map((logo, idx) => (
-            <img
-              key={logo.alt}
-              src={logo.src}
-              alt={logo.alt}
-              className={`h-16 w-auto sm:h-20 ${anim("")}`}
-              style={{
-                animationDelay: inView ? `${0.9 + idx * 0.2}s` : undefined,
-                animationFillMode: "forwards",
-              }}
-            />
-          ))}
+
+          {/* Quote Bubble */}
+          <div className="absolute bottom-2 left-4 sm:left-6 lg:left-[-30px] bg-white text-black text-sm p-4 rounded-xl shadow-md z-20 w-[40%] sm:w-[60%] lg:w-64 max-w-xs mb-4">
+  <p className="font-medium text-xs sm:text-base">
+    “I believe every patient deserves a smile they love. My goal is to
+    provide veneers that look natural and help you smile confidently,
+    in a stress-free experience.”
+  </p>
+</div>
+
+
         </div>
       </div>
     </section>
   );
 };
 
-export default TrustBuilders;
+export default DoctorProfile;

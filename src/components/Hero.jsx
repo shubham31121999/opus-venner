@@ -40,22 +40,18 @@ const Hero = () => {
   };
 
   return (
-    <section className="w-full bg-[url('/images/hero.png')] bg-cover bg-center text-white relative">
+    <section className="w-full bg-white bg-cover bg-center text-white relative">
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
+      <div className="absolute inset-0  z-0" />
       <div className="relative z-10 p-6 md:p-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Left Content */}
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-center text-center md:text-left">
           {/* Hero Image */}
-          <img
-            src={smiling}
-            alt="Smiling patient with veneers"
-            className="w-60 h-60 object-cover rounded-full mb-4 shadow-lg border-4 border-white md:mb-6"
-          />
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-            Transform Your Smile with Porcelain Veneers in Bandra & Fort
+          
+          <h1 className="text-3xl text-black md:text-5xl font-bold mb-4 leading-tight">
+           Transform Your Smile with the Best Dental Veneers in Bandra & Fort
           </h1>
-          <p className="text-lg text-gray-200 mb-6">
+          <p className="text-lg text-darkGray mb-6">
             Led by 30+ years of expertise, Opus Dental delivers natural-looking
             veneers with personalized care in Mumbai.
           </p>
@@ -72,6 +68,7 @@ const Hero = () => {
         </div>
         {/* Right Content - Form */}
          <div className="w-full md:w-1/2" >
+         <h3 className="text-xl md:text-5xl font-bold mb-4 leading-tight text-center">Relief Starts Today - Book Now</h3>
                        <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-green w-full">
             <div>
               <label className="block text-sm text-darkGray font-medium"> Full Name</label>

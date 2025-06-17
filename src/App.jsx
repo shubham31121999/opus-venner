@@ -15,7 +15,7 @@ import ThankYouPage from "./components/ThankYouPage";
 import BeforeAfter from "./components/BeforeAfter";
 import FloatingButtons from "./components/FloatingButtons";
 import FormSection from "./components/FormSection";
-
+import Banner from "./components/Banner";
 import TestimonialCarousel from "./components/TestimonialCarousal";
 import Gallery from "./components/Gallery";
 function HomePage() {

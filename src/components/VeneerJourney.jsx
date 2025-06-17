@@ -51,7 +51,7 @@ const VeneerJourney = () => (
         {steps.map((step, idx) => (
           <div
             key={idx}
-            className="bg-gray-50 border border-black rounded-lg shadow-sm p-6 flex flex-col items-center text-center transition-transform duration-300 hover:scale-110 hover:shadow-xl hover:border-themeLight"
+            className="bg-gray-50 border border-black rounded-lg shadow-sm p-6 flex flex-col items-center text-center transition-transform duration-300  hover:shadow-xl hover:border-themeLight"
           >
             <div className="mb-4">{step.icon}</div>
             <h3 className="text-lg font-bold text-themeLight mb-2">
@@ -71,7 +71,7 @@ const VeneerJourney = () => (
       <div className="mt-8">
         <button
           type="submit"
-          className="bg-themeLight hover:bg-white text-black px-6 py-3 rounded font-semibold border-2 border-black hover:bg-themeLight hover:text-themeLight transition"
+          className="bg-themeLight  text-black px-6 py-3 rounded font-semibold border-2 border-black hover:bg-themeLight hover:text-themeLight "
         >
           Ready to start your journey? Book your consultation now
         </button>
